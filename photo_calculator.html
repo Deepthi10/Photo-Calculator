@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="photo_calculator.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h3>Photo Batch</h3>                                      
+      <div class="form-inline row">
+	  <div class="form-group col-md-3">
+        <label>Quantity:</label> <input type="text" id="quantity" value="1" class="form-control">
+			</div>
+		<div class="form-group col-md-2">
+        <label>Size:</label>	
+        <select class ="form-control"id="photoSize" style="width:60%">
+          <option value="4x6">4x6</option>
+          <option value="5x7">5x7</option>
+          <option value="8x10">8x10</option>
+        </select>
+	</div>
+		<div class="form-group col-md-2">
+		
+        <label>Finish:</label>
+        <select class ="form-control" id="finish" style="width:60%">
+          <option value="glossy">glossy</option>
+          <option value="matte">matte</option>
+        </select>
+		</div>
+		<div class="form-group col-md-2">
+		<button class="btn btn-primary "onclick="addBatch()">Add Batch</button>	
+		</div>
+      </div>
+
+      <h3>Processing Time</h3>                                      
+      <div class="form-inline row">
+	  <div class="form-group col-md-2">
+        <select class ="form-control"id="time" style="width:100%">
+          <option value="next_day">By next day</option>
+          <option value="one_hour">1 Hour</option>
+        </select>
+		</div>
+		<div class="form-group">
+        <button class="btn btn-primary " onclick="setProcessingTime()">Set Time</button>
+		</div>
+      </div>
+
+      <h3>Coupon</h3>                                      
+     <div class="form-inline row">
+	  <div class="form-group col-md-3">
+        <input type="text" class ="form-control" id="coupon" style="width:100%">
+		</div>
+		<div class="form-group">
+        <button class="btn btn-primary " onclick="applyCoupon()">Apply Coupon</button>
+		</div>
+      </div>
+
+      <h3>Order Preview</h3> 
+      <div>
+        <div id="order_preview">
+          <table class ="table table-striped">  
+		  <thead style="color:white; background-color:#563d7c">
+            <tr> 
+              <th scope="col">Quantity</th> 
+              <th scope="col">Size</th>  
+              <th scope="col">Finish</th> 
+              <th scope="col">Cost</th> 
+            </tr> 
+			</thead>
+			<tbody>
+            <tr>  
+              <td>N/A</td>  
+              <td>N/A</td>  
+              <td>N/A</td>  
+              <td>$0.00</td>  
+            </tr>
+			</tbody>
+          </table>  
+          </br>
+          </br>Processing Cost: $0.00
+          </br></br><h4>Total Cost: $0.00<h4>  
+        </div>
+        </br>
+        <button class="btn btn-primary " onclick="clearOrder()">Clear Order</button>
+      </div>
+  </div>
+  </body>
+</html>
